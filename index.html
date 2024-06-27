@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portfólio Front-End</title>
+    <link rel="stylesheet" href="./styles/reset.css" />
+    <link rel="stylesheet" href="./styles/styles.css" />
+  </head>
+  <body id="sectionHome">
+    <label class="toggle__menu" for="button__menu" id="toggle__menu"
+      ><i class="fa-solid fa-bars" id="icon__toggleMenu"></i
+    ></label>
+    <input
+      type="checkbox"
+      class="button__menu"
+      id="button__menu"
+      name="button__menu"
+    />
+
+    <nav class="nav__menu" id="nav__menu">
+      <h2 class="title menu__title">Menu</h2>
+      <ul class="menu menu__links">
+        <li class="list__link">
+          <a class="link menu__link menu__link--active" href="#sectionHero"
+            ><span class="text link__content--flex"
+              ><i class="fa-solid fa-house"></i>Início</span
+            ></a
+          >
+        </li>
+        <li class="list__link">
+          <a class="link menu__link" href="#sectionAboutMe"
+            ><span class="text link__content--flex">
+              <i class="fa-solid fa-address-card"></i>Sobre Mim</span
+            ></a
+          >
+        </li>
+        <li class="list__link">
+          <a class="link menu__link" href="#sectionSkills"
+            ><span class="text link__content--flex"
+              ><i class="fa-solid fa-code"></i>Skills</span
+            ></a
+          >
+        </li>
+        <li class="list__link">
+          <a class="link menu__link" href="#sectionFormations"
+            ><span class="text link__content--flex"
+              ><i class="fa-solid fa-user-graduate"></i>Formações</span
+            ></a
+          >
+        </li>
+        <li class="list__link">
+          <a class="link menu__link" href="#sectionProjects"
+            ><span class="text link__content--flex"
+              ><i class="fa-solid fa-file-zipper"></i>Projetos</span
+            ></a
+          >
+        </li>
+        <li class="list__link">
+          <a class="link menu__link" href="#sectionContact"
+            ><span class="text link__content--flex"
+              ><i class="fa-solid fa-address-book"></i>Contato</span
+            ></a
+          >
+        </li>
+      </ul>
+      <!-- <ul class="menu__configurations">
+        <li class="configuration configuration__theme">
+          <a class="link menu__link" href="#sectionContact"
+            ><span class="link__content--flex"
+              ><i class="fa-solid fa-address-book"></i>Dark mode</span
+            ></a
+          >
+        </li>
+      </ul> -->
+    </nav>
+
+    <main class="main__container" id="screen">
+      <section class="container container__hero" id="sectionHero">
+        <img src="./assets/images/faceImage.svg" alt="" id="faceImage" />
+        <div class="hero__content">
+          <h1 class="mainTitle">
+            Seja bem-vindo! Sou Jairo Neto, Desenvolvedor Web
+            <strong class="text--strong-yellow">Front-End</strong>!
+          </h1>
+          <p class="text hero__text">
+            Faço faculdade na <em>Universidade Tiradentes</em>, além disso,
+            atualmente estou participando do projeto
+            <em>Oracle Next Education (ONE)</em> na Alura. Estes são os meus
+            primeiros passos para conquistar os meus sonhos!
+          </p>
+          <div class="hero__links">
+            <a href="https://github.com/JairoNetoDev" class="link hero__link"
+              ><span class="link__content link__content--flex">
+                <i class="fa-brands fa-github icon--active"></i>
+                Github
+                <img
+                  src="./assets/icons/icon-arrow-up-right.svg"
+                  alt=""
+                /> </span></a
+            ><a
+              href="https://www.linkedin.com/in/jaironetodev/"
+              class="link hero__link"
+              ><span class="link__content link__content--flex">
+                <i class="fa-brands fa-linkedin icon--active"></i>
+                LinkedIn
+                <img
+                  src="./assets/icons/icon-arrow-up-right.svg"
+                  alt=""
+                /> </span></a
+            ><a href="" class="link hero__link"
+              ><span class="link__content link__content--flex">
+                <i class="fa-solid fa-file-lines icon--active"></i>
+                Currículo
+                <img
+                  src="./assets/icons/icon-arrow-up-right.svg"
+                  alt=""
+                /> </span
+            ></a>
+          </div>
+        </div>
+      </section>
+
+      <section class="container container__aboutMe" id="sectionAboutMe">
+        <h2 class="title title__aboutMe">Sobre mim</h2>
+        <p class="text text__aboutMe">
+          Olá! Me chamo Jairo Williams Guedes Lopes Neto e tenho 18 anos. Sou
+          natural de Aracaju-SE e estou embarcando em uma jornada emocionante no
+          mundo do desenvolvimento web.
+        </p>
+        <p class="text text__aboutMe">
+          Atualmente, <em>estou imerso no estudo da biblioteca React</em> para
+          criar websites dinâmicos e aprimorar minhas habilidades de Front-end.
+          <strong class="text--strong-dark"
+            >Meu objetivo é me tornar um Desenvolvedor Full-Stack no
+            futuro</strong
+          >, mas estou concentrando meus esforços no Front-end no momento.
+        </p>
+        <p class="text text__aboutMe">
+          Estou apaixonado por transformar ideias em interfaces interativas e
+          acessíveis, e cada projeto é uma oportunidade de aprender algo novo.
+          Estou entusiasmado com o desafio de aprender e crescer nesta área em
+          constante evolução. Se você está em busca de um colaborador
+          comprometido com a excelência técnica e criativa, estou pronto para
+          contribuir!
+        </p>
+      </section>
+
+      <section class="container container__skills" id="sectionSkills">
+        <div class="content__skills content__skills--border">
+          <h2 class="title skills__title">Hard Skills</h2>
+          <ul class="box--flex-row box__skills box__skills--border">
+            <li class="skill skill--react">
+              <img class="skill__icon" src="./assets/icons/react.svg" alt="" />
+              <!-- <i class="fa-brands fa-react skill__icon"></i> -->
+              <span class="text skill__text">React</span>
+            </li>
+            <li class="skill skill--html">
+              <img class="skill__icon" src="./assets/icons/html.svg" alt="" />
+              <!-- <i class="fa-brands fa-html5 skill__icon"></i> -->
+              <span class="text skill__text">HTML</span>
+            </li>
+            <li class="skill skill--css">
+              <img class="skill__icon" src="./assets/icons/css.svg" alt="" />
+              <!-- <i class="fa-brands fa-css3-alt skill__icon"></i> -->
+              <span class="text skill__text">CSS</span>
+            </li>
+            <li class="skill skill--js">
+              <img class="skill__icon" src="./assets/icons/js.svg" alt="" />
+              <!-- <i class="fa-brands fa-js skill__icon"></i> -->
+              <span class="text skill__text">JavaScript</span>
+            </li>
+          </ul>
+        </div>
+        <div class="content__skills">
+          <h2 class="title title__skills">Soft Skills</h2>
+          <ul class="box--flex-row box__skills">
+            <li class="skill">
+              <img
+                class="skill__icon"
+                src="./assets/icons/analitico.svg"
+                alt=""
+              />
+              <span class="text skill__text">Analítico</span>
+            </li>
+            <li class="skill">
+              <img
+                class="skill__icon"
+                src="./assets/icons/comunicativo.svg"
+                alt=""
+              />
+              <span class="text skill__text">Sociável</span>
+            </li>
+            <li class="skill">
+              <img
+                class="skill__icon"
+                src="./assets/icons/confiavel.svg"
+                alt=""
+              />
+              <span class="text skill__text">Confiável</span>
+            </li>
+            <li class="skill">
+              <img
+                class="skill__icon"
+                src="./assets/icons/pacifico.svg"
+                alt=""
+              />
+              <span class="text skill__text">Pacífico</span>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="container container__formations" id="sectionFormations">
+        <div class="formation__content">
+          <h2 class="title formation__title">Formação acadêmica</h2>
+
+          <ul class="box--flex-column box__formation">
+            <li class="formation">
+              <div class="formation__container--image">
+                <img
+                  class="formation__image"
+                  src="./assets/images/formation-unit.svg"
+                  alt=""
+                />
+              </div>
+              <h3 class="sub-title fomation__sub-title">
+                Análise e Desenvolvimento de Sistemas
+              </h3>
+              <p class="text text__formation">Em andamento - UniT</p>
+            </li>
+            <li class="formation">
+              <div class="formation__container--image">
+                <img
+                  class="formation__image"
+                  src="./assets/images/formation-ifs.svg"
+                  alt=""
+                />
+              </div>
+              <h3 class="sub-title fomation__sub-title">
+                Técnico de Nível Médio em Informática
+              </h3>
+              <p class="text text__formation">Em andamento - IFS</p>
+            </li>
+            <li class="formation">
+              <div class="formation__container--image">
+                <img
+                  class="formation__image"
+                  src="./assets/images/formation-alura.svg"
+                  alt=""
+                />
+              </div>
+              <h3 class="sub-title fomation__sub-title">
+                Formação Iniciante em Programação
+              </h3>
+              <p class="text text__formation">2024 - Alura</p>
+            </li>
+          </ul>
+        </div>
+      </section>
+
+      <section class="container container__projects" id="sectionProjects">
+        <h2 class="title projects__title">Projetos</h2>
+        <ul class="box__projects">
+          <li class="project">
+            <header class="header__project">
+              <h2 class="sub-title sub-title__project">Admin Eventos</h2>
+              <ul class="languages__project">
+                <li class="language">
+                  <img src="./assets/icons/react.svg" class="language--icon" />
+                </li>
+                <li class="language">
+                  <img
+                    src="./assets/icons/typescript.svg"
+                    class="language--icon"
+                  />
+                </li>
+                <li class="language">
+                  <img
+                    class="language--icon"
+                    src="./assets/icons/tailwindcss.svg"
+                  />
+                </li>
+              </ul>
+            </header>
+
+            <div class="content__project">
+              <label
+                for="button__showTextProject1"
+                class="showTextProjectButton"
+                ><i class="fa-solid fa-eye"></i
+              ></label>
+              <input
+                type="checkbox"
+                class="button__showTextProject"
+                id="button__showTextProject1"
+                name="button__showTextProject"
+              />
+
+              <span class="show--text">
+                <p class="text text__project">
+                  No evento da Next Level Week da Rocketseat, participei do
+                  desenvolvimento de uma página para administrar os
+                  participantes de eventos específicos. Utilizamos React,
+                  TypeScript e Tailwind CSS para criar uma interface intuitiva e
+                  funcional.
+                </p>
+              </span>
+            </div>
+
+            <div class="links__project">
+              <a href="" class="link link__button link__button--active"
+                ><i class="fa-solid fa-globe"></i><span>Visitar Site</span></a
+              ><a href="" class="link link__button link__button--active"
+                ><i class="fa-brands fa-github"></i><span>Github</span></a
+              >
+            </div>
+          </li>
+
+          <li class="project">
+            <header class="header__project">
+              <h2 class="sub-title sub-title__project">Apple Watch</h2>
+              <ul class="languages__project">
+                <li class="language">
+                  <img src="./assets/icons/html.svg" class="language--icon" />
+                </li>
+                <li class="language">
+                  <img src="./assets/icons/css.svg" class="language--icon" />
+                </li>
+                <li class="language">
+                  <img src="./assets/icons/js.svg" class="language--icon" />
+                </li>
+              </ul>
+            </header>
+
+            <div class="content__project">
+              <label
+                for="button__showTextProject2"
+                class="showTextProjectButton"
+                ><i class="fa-solid fa-eye"></i
+              ></label>
+              <input
+                type="checkbox"
+                class="button__showTextProject"
+                id="button__showTextProject2"
+                name="button__showTextProject"
+              />
+
+              <span class="show--text"
+                ><p class="text text__project">
+                  No Intensivão de JavaScript, criei uma réplica da página de
+                  venda do Apple Watch, com destaque para a funcionalidade de
+                  troca de cores do dispositivo. O projeto apresenta um Apple
+                  Watch com informações detalhadas,
+                </p></span
+              >
+            </div>
+
+            <div class="links__project">
+              <a href="" class="link link__button link__button--active"
+                ><i class="fa-solid fa-globe"></i><span>Visitar Site</span></a
+              ><a href="" class="link link__button link__button--active"
+                ><i class="fa-brands fa-github"></i><span>Github</span></a
+              >
+            </div>
+          </li>
+
+          <li class="project">
+            <header class="header__project">
+              <h2 class="sub-title sub-title__project">Piggy Banky</h2>
+              <ul class="languages__project">
+                <li class="language">
+                  <img src="./assets/icons/html.svg" class="language--icon" />
+                </li>
+                <li class="language">
+                  <img src="./assets/icons/css.svg" class="language--icon" />
+                </li>
+                <li class="language">
+                  <img src="./assets/icons/js.svg" class="language--icon" />
+                </li>
+              </ul>
+            </header>
+
+            <div class="content__project">
+              <label
+                for="button__showTextProject3"
+                class="showTextProjectButton"
+                ><i class="fa-solid fa-eye"></i
+              ></label>
+              <input
+                type="checkbox"
+                class="button__showTextProject"
+                id="button__showTextProject3"
+                name="button__showTextProject"
+              />
+              <span class="show--text">
+                <p class="text text__project">
+                  O Piggy Banky é um site desenvolvido para a Serveloja,
+                  destacando seus serviços de forma clara e atrativa. Além de
+                  apresentar informações sobre a empresa, o site inclui um
+                  sistema integrado para facilitar as cobranças, proporcionando
+                  uma experiência completa aos usuários.
+                </p>
+              </span>
+            </div>
+
+            <div class="links__project">
+              <a href="" class="link link__button link__button--active"
+                ><i class="fa-solid fa-globe"></i><span>Visitar Site</span></a
+              ><a href="" class="link link__button link__button--active"
+                ><i class="fa-brands fa-github"></i><span>Github</span></a
+              >
+            </div>
+          </li>
+        </ul>
+      </section>
+
+      <section class="container container__contacts" id="sectionContact">
+        <div class="content__contact">
+          <div class="info__contact">
+            <header class="header__contact">
+              <h2 class="title title__contact">Contato</h2>
+              <ul class="box__contacts">
+                <li class="contact">
+                  <a
+                    href="https://wa.me/5579998358833?text=Olá%20gostaria%20de%20entrar%20em%20contato%20com%20você"
+                    class="link link__contact"
+                    ><i class="fa-brands fa-whatsapp fa-2x"></i
+                  ></a>
+                </li>
+                <li class="contact contact-">
+                  <a
+                    href="https://www.linkedin.com/in/jaironetodev/"
+                    class="link link__contact"
+                    ><i class="fa-brands fa-linkedin fa-2x"></i
+                  ></a>
+                </li>
+              </ul>
+            </header>
+            <span class="text text__contact"
+              >Quer entrar em contato comigo? Clique em algum ícone acima ou
+              então preencha o formulário abaixo e entrarei em contato o mais
+              rápido possível.</span
+            >
+          </div>
+          <form action="" method="post" class="contact__form" id="contact-form">
+            <div class="form-group">
+              <input
+                type="text"
+                id="insert--name"
+                name="insert--name"
+                class="insert__form insert--name"
+                maxlength="45"
+                minlength="3"
+                placeholder=" "
+                required
+              />
+              <label for="insert--name" class="form-label">Seu Nome</label>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="email"
+                id="insert--email"
+                name="insert--email"
+                class="insert__form insert--email"
+                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
+                maxlength="45"
+                minlength="3"
+                placeholder=""
+                required
+              />
+              <label for="insert--email" class="form-label">Seu E-mail</label>
+            </div>
+
+            <div class="form-group">
+              <input
+                type="text"
+                id="insert--subject"
+                name="insert--subject"
+                class="insert__form insert--subject"
+                maxlength="45"
+                placeholder=" "
+              />
+              <label for="insert--subject" class="form-label">Assunto</label>
+            </div>
+
+            <div class="form-group">
+              <textarea
+                id="insert--message"
+                name="insert--message"
+                cols="30"
+                rows="10"
+                class="insert__form insert--message"
+                placeholder=" "
+                maxlength="700"
+                required
+              ></textarea>
+              <label for="insert--message" class="form-label">Mensagem</label>
+            </div>
+
+            <input
+              type="submit"
+              class="link button__form--submit"
+              value="Enviar Mensagem"
+            />
+          </form>
+        </div>
+      </section>
+    </main>
+    <footer class="main__footer">
+      <span class="footer__content"
+        ><p class="text text__footer">
+          &copy; Desenvolvido por Jairo Williams Guedes Lopes Neto
+          <br />
+          2024
+        </p>
+      </span>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/505e91c238.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://cdn.emailjs.com/dist/email.min.js"></script>
+    <script src="main.js"></script>
+  </body>
+</html>

@@ -1,0 +1,92 @@
+.mainTitle {
+  text-align: center;
+
+  font-size: clamp(1.875rem, 1.5848rem + 1.5476vw, 3.5rem);
+
+  word-break: break-word;
+}
+
+#faceImage {
+  width: 40%;
+  min-width: 10rem;
+  max-width: 19rem;
+  align-self: center;
+}
+
+.container__hero {
+  margin: 2rem 0 0;
+}
+
+.container__hero:where(h1, p) {
+  width: fit-content;
+}
+
+.hero__content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  gap: 1rem;
+}
+
+.hero__links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-content: center;
+
+  gap: 0.5rem;
+  width: 100%;
+
+  & .hero__link {
+    padding: 0.25rem 0;
+    transition: all 0.5s ease;
+  }
+
+  & .hero__link:hover {
+    color: var(--color-yellow);
+    scale: 1.1;
+    transition: all 0.3s ease;
+    text-decoration: underline;
+  }
+}
+
+.container__aboutMe:where(h2, p) {
+  width: fit-content;
+}
+
+@media screen and (width >= 768px) and (width < 1024px) {
+  .mainTitle {
+    text-align: left;
+  }
+
+  .hero__content {
+    gap: 1.5rem;
+  }
+
+  .hero__links {
+    justify-content: flex-start;
+    gap: 1rem;
+  }
+}
+
+@media screen and (width >= 1024px) {
+  .mainTitle {
+    text-align: left;
+  }
+  .container__hero {
+    flex-direction: row-reverse;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .hero__content {
+    width: 60%;
+    align-items: flex-start;
+    gap: 2rem;
+  }
+  .hero__links {
+    justify-content: flex-start;
+    gap: 2rem;
+  }
+}

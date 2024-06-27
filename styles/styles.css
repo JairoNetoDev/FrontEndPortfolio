@@ -1,0 +1,10 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap");
+@import url("https://cdn-uicons.flaticon.com/2.4.2/uicons-brands/css/uicons-brands.css");
+@import "config.css";
+@import "navigation.css";
+@import "hero.css";
+@import "skills.css";
+@import "formations.css";
+@import "projects.css";
+@import "contact.css";
+@import "footer.css";
