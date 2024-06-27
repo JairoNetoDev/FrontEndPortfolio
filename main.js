@@ -121,22 +121,108 @@ document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
     event.preventDefault();
+    // Campos de erro
+    const containerErrorMessage = document.querySelector(
+      ".container__errorMessage "
+    );
+    const errorMessage = document.getElementById("errorMessage");
 
-    // Captura os dados do formulário
-    const name = document.getElementById("insert--name").value;
-    const email = document.getElementById("insert--email").value;
-    const subject = document.getElementById("insert--subject").value;
-    const message = document.getElementById("insert--message").value;
+    const nameInput = document.getElementById("insert--name");
+    // Verifica se o campo de nome está vazio ou só contém espaços em branco
+    if (!nameInput.validity.valid || nameInput.value.trim() === "") {
+      event.preventDefault(); // Impede o envio do formulário
+      nameInput.style.border = "2px solid red";
+      errorMessage.textContent = "Por favor, preencha o campo Nome.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+    nameInput.style.borderColor = "transparent";
+
+    // Verifica se o campo de nome excede o limite máximo de caracteres
+    if (nameInput.value.length > 50 || nameInput.value.length < 3) {
+      event.preventDefault(); // Impede o envio do formulário
+      nameInput.style.border = "2px solid red";
+      errorMessage.textContent =
+        "O campo Nome deve conter no mínimo 3 caracteres e máximo 50 caracteres.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+    // Verifica se o campo de e-mail está vazio
+    const emailInput = document.getElementById("insert--email");
+    if (emailInput.value.trim() === "") {
+      event.preventDefault(); // Impede o envio do formulário
+      emailInput.style.border = "2px solid red";
+      errorMessage.textContent = "Por favor, preencha o campo E-mail.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+
+    // Verifica se o campo de e-mail está em um formato válido
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    if (!emailRegex.test(emailInput.value)) {
+      event.preventDefault(); // Impede o envio do formulário
+      emailInput.style.border = "2px solid red";
+      errorMessage.textContent = "Por favor, insira um e-mail válido.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+    emailInput.style.borderColor = "transparent";
+
+    const subjectInput = document.getElementById("insert--subject");
+    // Verifica se o campo de Assunto está vazio ou só contém espaços em branco
+    if (subjectInput.value.trim() === "") {
+      event.preventDefault(); // Impede o envio do formulário
+      subjectInput.style.border = "2px solid red";
+      errorMessage.textContent = "Por favor, preencha o campo Assunto.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+
+    // Verifica se o campo de Assunto excede o limite máximo de 50 caracteres
+    if (subjectInput.value.length > 50) {
+      event.preventDefault(); // Impede o envio do formulário
+      subjectInput.style.border = "2px solid red";
+      errorMessage.textContent =
+        "O campo Assunto deve ter no máximo 50 caracteres.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+    subjectInput.style.borderColor = "transparent";
+
+    const messageInput = document.getElementById("insert--message");
+    // Verifica se o campo de Mensagem está vazio ou só contém espaços em branco
+    if (messageInput.value.trim() === "") {
+      event.preventDefault(); // Impede o envio do formulário
+      messageInput.style.border = "2px solid red";
+      errorMessage.textContent = "Por favor, preencha o campo Mensagem.";
+      containerErrorMessage.style.display = "block";
+      return;
+    }
+    errorMessage.style.borderColor = "none";
+
+    // Verifica se o campo de Mensagem excede o limite máximo de 300 caracteres
+    if (messageInput.value.length > 300 || messageInput.value.length < 1) {
+      event.preventDefault(); // Impede o envio do formulário
+      messageInput.style.border = "2px solid red";
+      errorMessage.textContent =
+        "O campo Mensagem deve ter no máximo 300 caracteres.";
+      containerErrorMessage.style.display = "block";
+    }
+    messageInput.style.borderColor = "transparent";
+
+    // Limpa a mensagem de erro se a validação passou
+    errorMessage.textContent = "";
+    containerErrorMessage.style.display = "none";
 
     // Configura os parâmetros para enviar
     const templateParams = {
-      from_name: name,
+      from_name: nameInput,
       from_email: email,
       message: message,
       subject: subject,
     };
 
-    // Envia o formulário usando a API EmailJS
+    //Envia o formulário usando a API EmailJS
     emailjs.send("service_ssw8k7n", "template_zvw7lz1", templateParams).then(
       function (response) {
         console.log("SUCCESS!", response.status, response.text);

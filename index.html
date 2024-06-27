@@ -17,6 +17,12 @@
     <link rel="stylesheet" href="./styles/styles.css" />
   </head>
   <body id="sectionHome">
+    <div class="container__errorMessage" id="">
+      <p>
+        <strong class="errorText--strong">Error:</strong>
+        <span id="errorMessage">teste</span>
+      </p>
+    </div>
     <label class="toggle__menu" for="button__menu" id="toggle__menu"
       ><i class="fa-solid fa-bars" id="icon__toggleMenu"></i
     ></label>
@@ -459,8 +465,7 @@
                 id="insert--name"
                 name="insert--name"
                 class="insert__form insert--name"
-                maxlength="45"
-                minlength="3"
+                maxlength="50"
                 placeholder=" "
                 required
               />
@@ -473,8 +478,7 @@
                 id="insert--email"
                 name="insert--email"
                 class="insert__form insert--email"
-                pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$"
-                maxlength="45"
+                maxlength="50"
                 minlength="3"
                 placeholder=""
                 required
@@ -488,8 +492,9 @@
                 id="insert--subject"
                 name="insert--subject"
                 class="insert__form insert--subject"
-                maxlength="45"
+                maxlength="50"
                 placeholder=" "
+                required
               />
               <label for="insert--subject" class="form-label">Assunto</label>
             </div>
@@ -502,7 +507,7 @@
                 rows="10"
                 class="insert__form insert--message"
                 placeholder=" "
-                maxlength="700"
+                maxlength="300"
                 required
               ></textarea>
               <label for="insert--message" class="form-label">Mensagem</label>
