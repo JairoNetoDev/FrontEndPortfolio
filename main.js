@@ -117,17 +117,36 @@ listShowTextProjectButton.forEach((button) => {
   emailjs.init("7nk2QLQ9TOCVc8KsL");
 })();
 // Script for submit e-mail form
+function isValidEmail(email) {
+  // Utilizando uma expressão regular simples para verificar o formato de e-mail
+  return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+}
 document
   .getElementById("contact-form")
   .addEventListener("submit", function (event) {
-    event.preventDefault();
+    const nameInput = document.getElementById("insert--name");
+    const emailInput = document.getElementById("insert--email");
+    const subjectInput = document.getElementById("insert--subject");
+    const messageInput = document.getElementById("insert--message");
     // Campos de erro
     const containerErrorMessage = document.querySelector(
       ".container__errorMessage "
     );
     const errorMessage = document.getElementById("errorMessage");
 
-    const nameInput = document.getElementById("insert--name");
+    event.preventDefault();
+    if (
+      nameInput.value.trim() == "" &&
+      emailInput.value.trim() == "" &&
+      isValidEmail(emailInput.value.trim()) &&
+      subjectInput.value.trim() == "" &&
+      messageInput.value.trim() == ""
+    ) {
+      event.preventDefault(); // Impede o envio do formulário
+      // Exibe uma mensagem geral de erro caso necessário
+      alert("Por favor, preencha todos os campos corretamente.");
+    }
+
     // Verifica se o campo de nome está vazio ou só contém espaços em branco
     if (!nameInput.validity.valid || nameInput.value.trim() === "") {
       event.preventDefault(); // Impede o envio do formulário
@@ -148,7 +167,6 @@ document
       return;
     }
     // Verifica se o campo de e-mail está vazio
-    const emailInput = document.getElementById("insert--email");
     if (emailInput.value.trim() === "") {
       event.preventDefault(); // Impede o envio do formulário
       emailInput.style.border = "2px solid red";
@@ -168,7 +186,6 @@ document
     }
     emailInput.style.borderColor = "transparent";
 
-    const subjectInput = document.getElementById("insert--subject");
     // Verifica se o campo de Assunto está vazio ou só contém espaços em branco
     if (subjectInput.value.trim() === "") {
       event.preventDefault(); // Impede o envio do formulário
@@ -189,7 +206,6 @@ document
     }
     subjectInput.style.borderColor = "transparent";
 
-    const messageInput = document.getElementById("insert--message");
     // Verifica se o campo de Mensagem está vazio ou só contém espaços em branco
     if (messageInput.value.trim() === "") {
       event.preventDefault(); // Impede o envio do formulário
@@ -216,11 +232,13 @@ document
 
     // Configura os parâmetros para enviar
     const templateParams = {
-      from_name: nameInput,
-      from_email: email,
-      message: message,
-      subject: subject,
+      from_name: nameInput.value,
+      from_email: emailInput.value,
+      subject: subjectInput.value,
+      message: messageInput.value,
     };
+
+    // Verifica se todos os campos estão preenchidos
 
     //Envia o formulário usando a API EmailJS
     emailjs.send("service_ssw8k7n", "template_zvw7lz1", templateParams).then(
